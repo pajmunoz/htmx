@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/htmx.org@1.9.10"
+        integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <span class="htmx-indicator loader"></span>
+    <div hx-trigger="load" hx-get="https://pajmunoz.github.io/profile-api/api.json" hx-target="#response-div" hx-swap="beforeend" hx-indicator=".loader">
+    </div>
+    <div id="response-div"></div>
+   
+
+    <form hx-post="">
+        <input type="text" id="name" placeholder="Name" required><br><br>
+        <input type="text" id="lastname" placeholder="Last Name" required><br><br>
+        <input type="email" id="mail" placeholder="Mail" required><br><br>
+        <button type="submit">Submit</button>
+    </form>
+
+</body>
+
+</html>

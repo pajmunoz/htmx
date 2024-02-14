@@ -1,0 +1,59 @@
+{
+    "results": [
+        {
+            "gender": "Male",
+            "name": {
+                "first": "Pablo",
+                "last": "Jara"
+            },
+            "location": {
+                "street": {
+                    "number": 294,
+                    "name": "Commandante Acha"
+                },
+                "city": "Junin",
+                "state": "Buenos Aires",
+                "country": "Argentina",
+                "postcode": 6000,
+                "coordinates": {
+                    "latitude": "87.3788",
+                    "longitude": "121.8903"
+                },
+                "timezone": {
+                    "offset": "-3.00",
+                    "description": "Buenos Aires"
+                }
+            },
+            "stack": {
+                "front-end": [
+                    "React",
+                    "Angular",
+                    "HTMX",
+                    "Wordpress",
+                    "Sitecore",
+                    "Sass"
+                ],
+                "back-end": [
+                    "Node.js",
+                    "PHP"
+                ],
+                "team": [
+                    "Scrum",
+                    "Agile"
+                ]
+            },
+            "email": "pablojaramunoz@icloud.com",
+            "dob": {
+                "date": "1991-10-22T05:00:11.517Z",
+                "age": 31
+            },
+            "phone": "+54 9 11 3942-1628",
+            "picture": {
+                "large": "https://randomuser.me/api/portraits/women/58.jpg",
+                "medium": "https://randomuser.me/api/portraits/med/women/58.jpg",
+                "thumbnail": "https://randomuser.me/api/portraits/thumb/women/58.jpg"
+            },
+            "nat": "EC"
+        }
+    ]
+}
