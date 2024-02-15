@@ -30,6 +30,19 @@ app.post('/data', async (req, res) => {
     }
 });
 
+app.put('/data/:id', async (req, res) => {
+    try {
+        const id = req.params.id; // Obtener el parámetro de la URL
+        const newData = req.body; // Obtener los datos enviados en la solicitud PUT
+        // Aquí puedes manejar la lógica para actualizar los datos con el ID proporcionado
+        console.log(`Updating data with ID ${id}:`, newData);
+        res.status(200).json({ message: `Data with ID ${id} updated successfully` });
+    } catch (error) {
+        console.error('Error updating data:', error);
+        res.status(500).json({ error: 'Failed to update data' });
+    }
+});
+
 // Iniciar el servidor
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}, http://localhost:3000/data`);
