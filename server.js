@@ -7,7 +7,12 @@ const PORT = process.env.PORT || 3000;
 // Endpoint para obtener datos de la API
 app.get('/data', async (req, res) => {
     try {
-        const response = await axios.get('https://pajmunoz.github.io/htmx/api.json');
+        const response = await axios.get('https://pajmunoz.github.io/htmx/api.json', {
+            'mode': 'cors',
+            'headers': {
+                'Access-Control-Allow-Origin': '*',
+            }
+        });
         res.json(response.data);
     } catch (error) {
         console.error('Error fetching data:', error);
