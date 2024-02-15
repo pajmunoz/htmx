@@ -8,15 +8,18 @@
     <script src="https://unpkg.com/htmx.org@1.9.10"
         integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC"
         crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/htmx.org/dist/ext/client-side-templates.js"></script>
+    <script src="https://unpkg.com/mustache@latest"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body hx-ext="client-side-templates">
     <span class="htmx-indicator loader"></span>
-    <div hx-trigger="load" hx-get="https://pajmunoz.github.io/htmx/api.json" hx-target="#response-div" hx-swap="beforeend" hx-indicator=".loader">
+    <div hx-trigger="load" hx-get="http://localhost:3000/data" hx-target="#response-div" hx-swap="beforeend" hx-indicator=".loader"
+        mustache-template="template-results">
     </div>
     <div id="response-div"></div>
-   
+
 
     <form hx-post="">
         <input type="text" id="name" placeholder="Name" required><br><br>
@@ -24,6 +27,14 @@
         <input type="email" id="mail" placeholder="Mail" required><br><br>
         <button type="submit">Submit</button>
     </form>
+
+    <template id="template-results">
+        {{#results}}
+        <img src={{picture.large}} alt="" srcset="">
+        <a href="mailto:{{email}}">{{name.first}} {{name.last}}</a>
+        {{/results}}
+    </template>
+    <a href="mailto:"></a>
 
 </body>
 
