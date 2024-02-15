@@ -17,3 +17,9 @@
         transform: rotate(360deg);
     }
     } 
+    figure{
+        width: 100px;
+    }
+    figure img{
+        width: 100%;
+    }

@@ -7,22 +7,24 @@
                 "last": "Jara"
             },
             "location": {
-                "street": {
-                    "number": 294,
-                    "name": "Commandante Acha"
-                },
                 "city": "Junin",
                 "state": "Buenos Aires",
                 "country": "Argentina",
                 "postcode": 6000,
-                "coordinates": {
-                    "latitude": "87.3788",
-                    "longitude": "121.8903"
-                },
                 "timezone": {
                     "offset": "-3.00",
                     "description": "Buenos Aires"
                 }
+            },
+            "studies":{
+                "university":[
+                    "Universidad de Palermo (ARG)",
+                    "Universidad Técnica Nacional (ARG)",
+                    "Instituto Metropolitano de Diseño (EC)"
+                ],
+                "certifications":[
+                    "Fullstack developer"
+                ]
             },
             "stack": {
                 "front-end": [
