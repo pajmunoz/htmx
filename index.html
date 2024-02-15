@@ -11,12 +11,17 @@
     <script src="https://unpkg.com/htmx.org/dist/ext/client-side-templates.js"></script>
     <script src="https://unpkg.com/mustache@latest"></script>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Josefin+Sans:wght@400;700&display=swap"
+        rel="stylesheet">
 </head>
 
 <body hx-ext="client-side-templates">
     <span class="htmx-indicator loader"></span>
     <div hx-trigger="load" hx-get="https://api-87hp.onrender.com/data" hx-target="#response-div" hx-swap="beforeend"
-        hx-indicator=".loader" mustache-template="template-results">
+        mustache-template="template-results">
     </div>
     <div id="response-div"></div>
 
@@ -25,38 +30,46 @@
         <figure>
             <img src={{picture.large}} alt="" srcset="">
         </figure>
-        <p>{{name.first}} {{name.last}}</p>
-        <p>{{location.city}}, {{location.state}}, {{location.country}}</p>
-        <p>Stack:</p>
+        <h1>{{name.first}} {{name.last}}</h1>
+        <h4>{{location.state}}, {{location.country}}</h4>
+        <h3>Stack:</h3>
         <p>Front End:</p>
         {{#stack}}
         <ul>
-
-            <li>{{front-end}}</li>
+            {{#front-end}}
+            <li>{{.}}</li>
+            {{/front-end}}
 
         </ul>
         <p>Back End:</p>
 
         <ul>
-
-            <li>{{back-end}}</li>
+            {{#back-end}}
+            <li>{{.}}</li>
+            {{/back-end}}
 
         </ul>
         <p>Teams:</p>
         <ul>
-
-            <li>{{team}}</li>
-
+            {{#team}}
+            <li>{{.}}</li>
+            {{/team}}
         </ul>
         {{/stack}}
-        <p>Studies</p>
+        {{#studies}}
+        <h3>Studies</h3>
         <ul>
-            <li>{{university}}</li>
+            {{#university}}
+            <li>{{.}}</li>
+            {{/university}}
         </ul>
-        <p>Certifications</p>
+        <h3>Certifications</h3>
         <ul>
-            <li>{{certifications}}</li>
+            {{#certifications}}
+            <li>{{.}}</li>
+            {{/certifications}}
         </ul>
+        {{/studies}}
         <hr>
         <h4>Can reach me at: {{email}}</h4>
         {{/results}}

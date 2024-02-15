@@ -1,3 +1,14 @@
+:root {
+    font-family: "Comfortaa", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+    color: gray;
+}
+body{
+    background-color:azure;
+}
+
 .loader {
     width: 48px;
     height: 48px;
@@ -7,19 +18,22 @@
     display: inline-block;
     box-sizing: border-box;
     animation: rotation 1s linear infinite;
-    }
+}
 
-    @keyframes rotation {
+@keyframes rotation {
     0% {
         transform: rotate(0deg);
     }
+
     100% {
         transform: rotate(360deg);
     }
-    } 
-    figure{
-        width: 100px;
-    }
-    figure img{
-        width: 100%;
-    }
+}
+
+figure {
+    width: 100px;
+}
+
+figure img {
+    width: 100%;
+}
