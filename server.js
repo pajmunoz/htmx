@@ -1,18 +1,15 @@
 const axios = require('axios');
+const cors = require('cors');
 const express = require('express');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+app.use(cors());
 // Endpoint para obtener datos de la API
 app.get('/data', async (req, res) => {
     try {
-        const response = await axios.get('https://pajmunoz.github.io/htmx/api.json', {
-            'mode': 'cors',
-            'headers': {
-                'Access-Control-Allow-Origin': '*',
-            }
-        });
+        const response = await axios.get('https://pajmunoz.github.io/htmx/api.json');
         res.json(response.data);
     } catch (error) {
         console.error('Error fetching data:', error);
