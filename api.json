@@ -27,7 +27,7 @@
                 ]
             },
             "stack": {
-                "front-end": [
+                "front": [
                     "React",
                     "Angular",
                     "HTMX",
@@ -35,7 +35,7 @@
                     "Sitecore",
                     "Sass"
                 ],
-                "back-end": [
+                "back": [
                     "Node.js",
                     "PHP"
                 ],
