@@ -54,6 +54,14 @@ ul{
 }
 li{
     padding: 1em;
+
+}
+li span:hover{
+    cursor: pointer;
+    background-color: lime;
+}
+li span:active{
+    background-color: aqua;
 }
 .odd{
     background-color: aquamarine;
@@ -71,3 +79,14 @@ li{
     padding: 1em 0;
     font-size: .8em;
 }
+#hoveredTextContainer {
+    position: absolute;
+    display: none;
+    background-color: rgb(198, 3, 3);
+    border: 1px solid #ccc;
+    color: white;
+    padding: 5px;
+    min-width: 100px;
+    min-height: 100px;
+    left: 0;
+  }

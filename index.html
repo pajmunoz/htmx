@@ -9,14 +9,20 @@
         integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC"
         crossorigin="anonymous"></script>
     <script src="https://unpkg.com/htmx.org/dist/ext/client-side-templates.js"></script>
-    <script src="https://unpkg.com/mustache@latest"></script>
+
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Handjet:wght@100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Handjet:wght@100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
+        rel="stylesheet">
+
+
 </head>
 
 <body hx-ext="client-side-templates">
+    <button id="muteBtn">Mute</button>
+    <audio id="hover-sound" src="./assets/analog-appliance-button-15-186961.mp3" preload="auto"></audio>
     <div hx-trigger="load" hx-get="https://api-87hp.onrender.com/data" hx-target="#response-div" hx-swap="beforeend"
         mustache-template="template-results">
     </div>
@@ -24,18 +30,23 @@
 
     <template id="template-results">
         {{#results}}
-        <h1>{{name.first}} {{name.last}}</h1>
+        <h1 id="titulo">{{name.first}} {{name.last}}</h1>
         <figure>
             <img src={{picture.large}} alt="" srcset="">
         </figure>
-      
+
         <h4>{{location.state}}, {{location.country}}</h4>
         <h3>Stack:</h3>
         <p>Front End:</p>
         {{#stack}}
         <ul class="odd">
             {{#front-end}}
-            <li>{{.}}</li>
+            <li><span hx-trigger="click" hx-get="https://api-87hp.onrender.com/data" hx-vals='{"results":[{"gender"}]}' hx-target="#hoveredTextContainer"
+                    mustache-template="hoveredTextContainer">
+
+                    {{ .}}
+
+                    ></span></li>
             {{/front-end}}
 
         </ul>
@@ -43,14 +54,14 @@
 
         <ul class="par">
             {{#back-end}}
-            <li>{{.}}</li>
+            <li><span>{{.}} ></span></li>
             {{/back-end}}
 
         </ul>
         <p>Teams:</p>
         <ul class="odd">
             {{#team}}
-            <li>{{.}}</li>
+            <li><span>{{.}} ></span></li>
             {{/team}}
         </ul>
         {{/stack}}
@@ -58,13 +69,13 @@
         <h3>Studies</h3>
         <ul class="par">
             {{#university}}
-            <li>{{.}}</li>
+            <li><span>{{.}} ></span></li>
             {{/university}}
         </ul>
         <h3>Certifications</h3>
         <ul class="odd">
             {{#certifications}}
-            <li>{{.}}</li>
+            <li><span>{{.}} ></span></li>
             {{/certifications}}
         </ul>
         {{/studies}}
@@ -73,6 +84,12 @@
         {{/results}}
     </template>
     <a href="mailto:"></a>
+    <template id="hoveredTextContainer">
+       
+    </template>
+    <script src="https://unpkg.com/mustache@latest"></script>
+    <script defer src="https://code.jquery.com/jquery-4.0.0-beta.js"></script>
+    <script defer type="text/javascript" src="script.js"></script>
 
 </body>
 
