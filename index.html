@@ -40,22 +40,22 @@
         <p>Front End:</p>
         {{#stack}}
         <ul class="odd">
-            {{#front-end}}
+            {{#front}}
             <li><span hx-trigger="click" hx-get="https://api-87hp.onrender.com/data" hx-vals='{"results":[{"gender"}]}' hx-target="#hoveredTextContainer"
                     mustache-template="hoveredTextContainer">
 
                     {{ .}}
 
                     ></span></li>
-            {{/front-end}}
+            {{/front}}
 
         </ul>
         <p>Back End:</p>
 
         <ul class="par">
-            {{#back-end}}
+            {{#back}}
             <li><span>{{.}} ></span></li>
-            {{/back-end}}
+            {{/back}}
 
         </ul>
         <p>Teams:</p>
